@@ -12,5 +12,9 @@ public class NotificationService {
 
         // You can add more notification types in the future
 
+        // Added Slack Notification Feature  without modifying existing code
+        creator = new SlackNotificationCreator();
+        creator.send("Hello, this is a test Slack notification!");
+
     }
 }

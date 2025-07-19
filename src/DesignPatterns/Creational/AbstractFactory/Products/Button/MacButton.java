@@ -1,6 +1,6 @@
-package DesignPatterns.Creational.AbstractFactory;
+package DesignPatterns.Creational.AbstractFactory.Products.Button;
 
-public class MacButton implements  Button{
+public class MacButton implements Button {
     @Override
     public void paint() {
         System.out.println("Painting a Mac button");

@@ -1,6 +1,6 @@
-package DesignPatterns.Creational.AbstractFactory;
+package DesignPatterns.Creational.AbstractFactory.Products.Button;
 
-public class WindowsButton implements  Button{
+public class WindowsButton implements Button {
     /**
      *
      */

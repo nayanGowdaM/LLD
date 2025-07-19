@@ -13,5 +13,11 @@ public class ECommerceAppV2 {
         CheckoutService checkoutService = new CheckoutService(paymentProcessor);
         checkoutService.checkout(100.0, "USD");
 
+        // Use the Legacy Payment Gateway
+        paymentProcessor = new LegacyPaymentProcessorAdapter(new LegacyPaymentProcessor());
+        checkoutService = new CheckoutService(paymentProcessor);
+        checkoutService.checkout(200.0, "EUR");
+
+
     }
 }

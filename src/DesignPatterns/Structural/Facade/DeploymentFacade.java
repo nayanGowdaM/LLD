@@ -1,4 +1,4 @@
-package DesignPatterns.Structural.Adapter.Facade;
+package DesignPatterns.Structural.Facade;
 
 public class DeploymentFacade {
     private  BuildSystem buildSystem = new BuildSystem();

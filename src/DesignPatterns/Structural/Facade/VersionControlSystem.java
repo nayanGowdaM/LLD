@@ -1,4 +1,4 @@
-package DesignPatterns.Structural.Adapter.Facade;
+package DesignPatterns.Structural.Facade;
 
 public class VersionControlSystem {
     public void pullLatestChanges() {

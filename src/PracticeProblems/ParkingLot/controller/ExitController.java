@@ -1,4 +1,4 @@
 package PracticeProblems.ParkingLot.controller;
 
-public class exitController {
+public class ExitController {
 }

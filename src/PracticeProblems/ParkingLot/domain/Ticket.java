@@ -1,15 +1,13 @@
 package PracticeProblems.ParkingLot.domain;
 
-import java.time.Instant;
 import java.time.LocalDateTime;
-import java.util.Random;
 import java.util.UUID;
 
 public class Ticket {
-    private UUID id;
-    private UUID vehicleId;
-    private LocalDateTime entryTime;
-    private UUID slotId;
+    private final UUID id;
+    private final UUID vehicleId;
+    private final LocalDateTime entryTime;
+    private final UUID slotId;
     private  boolean isActive;
 
     public Ticket(UUID vehicleId, UUID slotId) {
@@ -22,5 +20,21 @@ public class Ticket {
 
     public UUID getId() {
         return id;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public UUID getVehicleId() {
+        return vehicleId;
+    }
+
+    public UUID getSlotId() {
+        return slotId;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 }

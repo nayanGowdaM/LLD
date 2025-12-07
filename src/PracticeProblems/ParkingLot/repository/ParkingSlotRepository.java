@@ -15,8 +15,8 @@ public class ParkingSlotRepository {
         this.availableSlots = 0;
     }
 
-    public Optional<ParkingSlot> findById(UUID slotId){
-        return Optional.ofNullable(slots.get(slotId));
+    public ParkingSlot findById(UUID slotId){
+        return slots.get(slotId);
     }
     public ParkingSlot save(ParkingSlot slot){
         slots.put(slot.getId(), slot);

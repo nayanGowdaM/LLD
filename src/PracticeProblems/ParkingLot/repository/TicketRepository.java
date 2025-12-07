@@ -17,7 +17,8 @@ public class TicketRepository {
         return ticket;
     }
 
-    public  Ticket findById(UUID ticketId){
+    // Repository returns null if not found - Service layer handles business logic
+    public Ticket findById(UUID ticketId){
         return tickets.get(ticketId);
     }
 
@@ -30,4 +31,6 @@ public class TicketRepository {
         UUID ticketId = slotIdToTicketId.get(slotId);
         return Optional.ofNullable( tickets.get(ticketId));
     }
+
+
 }

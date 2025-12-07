@@ -48,5 +48,9 @@ public class EntryController {
             this.slotId = slotId;
             this.message = message;
         }
+
+        public UUID getTicketId() {
+            return ticketId;
+        }
     }
 }

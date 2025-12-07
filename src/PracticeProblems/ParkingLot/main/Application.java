@@ -1,13 +1,16 @@
 package PracticeProblems.ParkingLot.main;
 
 import PracticeProblems.ParkingLot.controller.EntryController;
+import PracticeProblems.ParkingLot.controller.ExitController;
 import PracticeProblems.ParkingLot.domain.Floor;
 import PracticeProblems.ParkingLot.domain.ParkingSlot;
 import PracticeProblems.ParkingLot.domain.VehicleType;
 import PracticeProblems.ParkingLot.repository.FloorRepository;
 import PracticeProblems.ParkingLot.repository.ParkingSlotRepository;
+import PracticeProblems.ParkingLot.repository.ReceiptRepository;
 import PracticeProblems.ParkingLot.repository.TicketRepository;
 import PracticeProblems.ParkingLot.service.ParkingSlotService;
+import PracticeProblems.ParkingLot.service.ReceiptService;
 import PracticeProblems.ParkingLot.service.TicketService;
 
 public class Application {
@@ -38,13 +41,16 @@ public class Application {
         TicketRepository ticketRepository = new TicketRepository();
         FloorRepository floorRepository = new FloorRepository();
         ParkingSlotRepository parkingSlotRepository = new ParkingSlotRepository();
+        ReceiptRepository  receiptRepository = new ReceiptRepository();
 
 //        Initalize Services
         TicketService ticketService = new TicketService(ticketRepository);
         ParkingSlotService parkingSlotService = new ParkingSlotService(parkingSlotRepository);
+        ReceiptService receiptService = new ReceiptService(receiptRepository);
 
 //        Initialize Controllers
         EntryController entryController = new EntryController(parkingSlotService, ticketService);
+        ExitController exitController = new ExitController(ticketService, receiptService, parkingSlotService);
 
 //        Initialize parking lot
         Application app = new Application(floorRepository, parkingSlotRepository);
@@ -72,6 +78,7 @@ public class Application {
         EntryController.EntryResult entryResponse = entryController.entry("KA02JO4524", VehicleType.BIKE);
 
 //        Exit Flow
+        ExitController.ExitResult exitResult = exitController.exit(entryResponse.getTicketId());
 
 
     }
